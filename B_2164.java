@@ -2,12 +2,12 @@ import java.util.LinkedList;
 
 public final class B_2164 {
     public static void main(String[] args) {
-        System.out.println(new B_2164().solution("1") == 1);
-        System.out.println(new B_2164().solution("4") == 4);
-        System.out.println(new B_2164().solution("6") == 4);
+        System.out.println(new B_2164().solution("1").equals("1"));
+        System.out.println(new B_2164().solution("4").equals("4"));
+        System.out.println(new B_2164().solution("6").equals("4"));
     }
 
-    public int solution(String string) {
+    public String solution(String string) {
         var count = Integer.parseInt(string);
         var deque = new LinkedList<Integer>();
 
@@ -20,6 +20,6 @@ public final class B_2164 {
             deque.add(deque.pollFirst());
         }
 
-        return deque.getFirst();
+        return String.valueOf(deque.getFirst());
     }
 }
