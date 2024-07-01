@@ -1,10 +1,15 @@
+import org.junit.jupiter.api.Test;
+
 import java.util.LinkedList;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public final class B_2164 {
-    public static void main(String[] args) {
-        System.out.println(new B_2164().solution("1").equals("1"));
-        System.out.println(new B_2164().solution("4").equals("4"));
-        System.out.println(new B_2164().solution("6").equals("4"));
+    @Test
+    void test() {
+        assertEquals(new B_2164().solution("1"), "1");
+        assertEquals(new B_2164().solution("4"), "4");
+        assertEquals(new B_2164().solution("6"), "4");
     }
 
     public String solution(String string) {

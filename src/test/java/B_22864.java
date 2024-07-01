@@ -1,8 +1,13 @@
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public final class B_22864 {
-    public static void main(String[] args) {
-        System.out.println(new B_22864().solution("5 3 2 10").equals("24"));
-        System.out.println(new B_22864().solution("10 5 1 10").equals("15"));
-        System.out.println(new B_22864().solution("11 5 1 10").equals("0"));
+    @Test
+    void test() {
+        assertEquals(solution("5 3 2 10"), "24");
+        assertEquals(solution("10 5 1 10"), "15");
+        assertEquals(solution("11 5 1 10"), "0");
     }
 
     public String solution(String string) {
