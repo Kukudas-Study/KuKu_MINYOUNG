@@ -1,3 +1,5 @@
+package week_2;
+
 import java.util.Arrays;
 
 public final class P_42885 {

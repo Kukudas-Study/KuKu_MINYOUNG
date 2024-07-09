@@ -1,3 +1,5 @@
+package week_1;
+
 public final class P_12977 {
     public static void main(String[] args) {
         System.out.println(new P_12977().solution(new int[]{1, 2, 3, 4}) == 1);

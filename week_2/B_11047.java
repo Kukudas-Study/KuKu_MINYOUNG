@@ -1,3 +1,5 @@
+package week_2;
+
 import java.io.*;
 
 public final class B_11047 {
