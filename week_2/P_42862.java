@@ -28,7 +28,7 @@ public final class P_42862 {
         }
 
         // 번호 순으로 정렬
-        reserves.sort(Comparator.reverseOrder());
+        reserves.sort(Comparator.naturalOrder());
 
         // 체육복을 가져온 학생들을 순회
         for (int student : reserves) {
@@ -38,8 +38,8 @@ public final class P_42862 {
             // losts의 크기는 1 줄어들게 된다.
             //
             // 호출 결과가 거짓인 경우, 뒷 번호에도 remove를 호출한다.
-            if (!losts.remove((Object) (student + 1))) {
-                losts.remove((Object) (student - 1));
+            if (!losts.remove((Object) (student - 1))) {
+                losts.remove((Object) (student + 1));
             }
         }
 
