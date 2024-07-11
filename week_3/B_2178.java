@@ -2,6 +2,8 @@ package week_3;
 
 import java.io.*;
 import java.util.*;
+import java.util.function.BiFunction;
+import java.util.function.Consumer;
 
 public final class B_2178 {
     public static void main(String[] args) throws IOException {
@@ -66,44 +68,28 @@ public final class B_2178 {
                 goals.add(poll);
             }
 
-            // 인접한 정점들을 구한다.
-            // 위, 아래, 왼쪽, 오른쪽이 이동 가능한지 확인
-            var list = new ArrayList<Position>();
-
-            // 아래
-            var down = new Position(poll.x, poll.y - 1, poll.depth + 1);
-            if (map.containsKey(down) && map.get(down)) {
-                list.add(down);
-            }
-
-            // 오른쪽
-            var right = new Position(poll.x + 1, poll.y, poll.depth + 1);
-            if (map.containsKey(right) && map.get(right)) {
-                list.add(right);
-            }
-
-            // 위
-            var up = new Position(poll.x, poll.y + 1, poll.depth + 1);
-            if (map.containsKey(up) && map.get(up)) {
-                list.add(up);
-            }
-
-            // 왼쪽
-            var left = new Position(poll.x - 1, poll.y, poll.depth + 1);
-            if (map.containsKey(left) && map.get(left)) {
-                list.add(left);
-            }
-
-            for (var other : list) {
-                // 방문했음 스킵
-                if (visited.contains(other)) {
-                    continue;
+            // 고차 함수 대신 사용
+            Consumer<Position> consumer = (other) -> {
+                // 이동 가능한지, 방문 가능한지 확인
+                if (map.containsKey(other) &&
+                        map.get(other) &&
+                        !visited.contains(other)
+                ) {
+                    // 가능하면 큐에 추가, 방문 처리
+                    queue.offer(other);
+                    visited.add(other);
                 }
+            };
 
-                // 큐에 집어넣고 방문처리
-                queue.offer(other);
-                visited.add(other);
-            }
+            // 고차 함수 대신 사용
+            BiFunction<Integer, Integer, Position> biConsumer = (x, y) ->
+                    new Position(poll.x + x, poll.y + y, poll.depth + 1);
+
+            // 인접한 정점을 탐색한다.
+            consumer.accept(biConsumer.apply(0, -1));
+            consumer.accept(biConsumer.apply(1, 0));
+            consumer.accept(biConsumer.apply(0, 1));
+            consumer.accept(biConsumer.apply(-1, 0));
         }
 
         // 도달한 위치들 중 최단 거리 구하기
