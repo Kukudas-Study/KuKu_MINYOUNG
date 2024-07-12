@@ -3,7 +3,8 @@ package week_3;
 import java.io.*;
 import java.util.ArrayList;
 
-public final class B_2798 {
+// 다시 풀기
+public final class B_2798_R {
     public static void main(String[] args) throws IOException {
         var reader = new BufferedReader(new InputStreamReader(System.in));
         var writer = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -25,7 +26,6 @@ public final class B_2798 {
         reader.close();
     }
 
-    // 다시 풀 예정
     public static int solution(int M, int[] numbers) {
         var dest = new ArrayList<Integer>();
 

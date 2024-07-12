@@ -4,7 +4,8 @@ import java.io.*;
 import java.util.*;
 import java.util.function.Supplier;
 
-public final class B_2667 {
+// 클래스 생성 없이 다시 풀기
+public final class B_2667_R {
     public static void main(String[] args) throws IOException {
         var reader = new BufferedReader(new InputStreamReader(System.in));
         var writer = new BufferedWriter(new OutputStreamWriter(System.out));

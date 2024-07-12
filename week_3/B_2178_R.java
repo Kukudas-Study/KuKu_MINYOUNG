@@ -5,7 +5,8 @@ import java.util.*;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
 
-public final class B_2178 {
+// 클래스 생성 없이 다시 풀기
+public final class B_2178_R {
     public static void main(String[] args) throws IOException {
         var reader = new BufferedReader(new InputStreamReader(System.in));
         var writer = new BufferedWriter(new OutputStreamWriter(System.out));
