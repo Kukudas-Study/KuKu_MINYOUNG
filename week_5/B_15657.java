@@ -9,6 +9,7 @@ public final class B_15657 {
         var reader = new BufferedReader(new InputStreamReader(System.in));
         var writer = new BufferedWriter(new OutputStreamWriter(System.out));
 
+        // 입출력 설명 생략
         var input = reader.readLine().split(" ", 2);
         var N = Integer.parseInt(input[0]);
         var M = Integer.parseInt(input[1]);
@@ -26,7 +27,10 @@ public final class B_15657 {
     }
 
     static String solution(int M, int[] numbers) {
+        // 사전 정렬 및 탐색을 위해 정렬
         Arrays.sort(numbers);
+
+        // 백트래킹 구현
         var destination = new StringBuilder();
         track(
                 M,
@@ -39,6 +43,8 @@ public final class B_15657 {
         return destination.toString();
     }
 
+    // start로 탐색을 끝낸 번호는 제외한다.
+    // 그 외엔 걍 백트래킹 구현이므로 설명 X
     static void track(
             int maxDepth,
             int depth,
